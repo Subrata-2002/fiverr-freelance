@@ -17,7 +17,7 @@ const GigCard = ({ item }) => {
     // console.log(data);
 
     return (
-        <Link to={`/gig/${item._id}`} className="link">
+        <a href={`/gig/${item._id}`} className="link">
 
             <div className='gigCard'>
 
@@ -58,7 +58,7 @@ const GigCard = ({ item }) => {
                 </div>
 
             </div>
-        </Link>
+        </a>
     )
 }
 

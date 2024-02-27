@@ -24,8 +24,8 @@ app.use(cookieParser(
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-    origin:'http://127.0.0.1:5173',
-    // origin:"https://fiverr-nest.netlify.app",
+    // origin:'http://127.0.0.1:5173',
+    origin:"https://fiverr-nest.netlify.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
      credentials:true ,
 }))
@@ -58,16 +58,6 @@ app.use("/api/reviews", reviewRoute);
 //       res.sendFile('index.html', { root });
 //     })
 //   }
-
-if (process.env.NODE_ENV === "production") {
-    // Set static folder
-    app.use(express.static("client"));
-  
-    // Serve the React's HTML file for any other routes
-    app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "index.html"));
-    });
-  }
 
 app.use((err, req, res, next)=>{
     const errorStatus = err.status || 500

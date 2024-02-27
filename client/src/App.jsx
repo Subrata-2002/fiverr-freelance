@@ -101,7 +101,7 @@ function App() {
           element: <Success/>
         },
         {
-          path: "*",
+          path: "/*",
           element: <Error/>
         },
 
